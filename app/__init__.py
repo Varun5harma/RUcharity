@@ -1,5 +1,5 @@
 import mysql.connector
-
+from flask import request
 from flask import Flask
 
 #importing Flask (class that holds the entire app)
@@ -27,7 +27,7 @@ for result in cursor.execute(operation, multi=True):
 
 
 cursor.execute(operation)
-#Command executed!
+print ("Command executed!");
 
 
 
