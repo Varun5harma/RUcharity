@@ -1,6 +1,6 @@
+from flask import Flask
 import mysql.connector
 from flask import request
-from flask import Flask
 from flask import render_template, json
 
 #importing Flask (class that holds the entire app)
@@ -56,7 +56,6 @@ def signUp():
     _COMMUTER = request.args.get("Commuter")
     _MAJOR = request.args.get("r_Major")
 
-    #if _name and _RUID and _MEALPLAN and _SwipesLeft and _MAJOR and _CAMPUS: ('test',1451001509, 150,0,'Finance','Busch')
 
     query_giver = """INSERT INTO Givers (Name,RUID,MEALPLAN,SWIPES_Left,MAJORS,CAMPUS)
                 VALUES (%s,%s,%s,%s,%s,%s); """
