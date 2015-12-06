@@ -7,7 +7,7 @@
         <meta name="keywords" content="pinegrow, blocks, bootstrap" />
         <meta name="description" content="My new website" />
         <link rel="shortcut icon" href="ico/favicon.png"> 
-          <!-- Core CSS --><!-- href= {{url_for("static",filename = "images/brand/pgblocks-logo-white-nostrap.png")}}-->
+        <!-- Core CSS --><!-- href= {{url_for("static",filename = "images/brand/pgblocks-logo-white-nostrap.png")}}-->
         <link href= {{url_for("static",filename = "bootstrap/css/bootstrap.min.css")}} rel="stylesheet"> 
         <link href= {{url_for("static",filename = "css/font-awesome.min.css")}} rel="stylesheet">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700" rel="stylesheet">
@@ -52,7 +52,9 @@
                             <li class="nav-item">
                                 <a href="#content-3-3">Who are you?<br></a>
                             </li>
-                            <!--//dropdown-->                             
+                            <li class="nav-item">
+                                <a href="#checkBalance">Your Balance<br></a>
+                            </li>
                             <li class="nav-item">
                                 <a href="#contact">Contact</a>
                             </li>
@@ -67,8 +69,8 @@
         </header>
         <section id="promo-3" class="content-block promo-3 min-height-600px bg-deepocean">
             <div class="container text-center">
-                <h1>Our awesome slogan!</h1>
-                <h3 class="white">Kartik Chopra &amp; Varun Sharma<br></h3>
+                <h1><br><br>Our awesome slogan!</h1>
+                <h3 class="white"><Strong>RU</Strong> Charity<br></h3>
                 <a href="#content-3-7" class="btn btn-outline btn-outline-xl outline-light">Learn more<br></a>
             </div>
             <!-- /.container -->
@@ -94,10 +96,10 @@
                         <h4>Are you in need of Swipes or do you have some to give!</h4>
                         <div class="col-md-6 col-md-offset-3 text-center">
                             <div class="col-md-6">
-                                <a href="#give" class="btn btn-block btn-outline btn-outline-lg outline-light">Give</a>
+                                <button class="btn btn-block btn-outline btn-outline-lg outline-light" data-target="#giveModal" data-toggle="modal" type="button">Give</button>
                             </div>
                             <div class="col-md-6">
-                                <a href="#recieve" class="btn btn-block btn-outline btn-outline-lg outline-light">Recieve</a>
+                                <button class="btn btn-block btn-outline btn-outline-lg outline-light" type="button" data-target="#recieveModal" data-toggle="modal">Receive</button>
                             </div>
                         </div>
                     </div>
@@ -106,83 +108,132 @@
             </section>
             <div class="container text-center">
 </div>
-            <!-- /.container -->
-            <div class="row pg-empty-placeholder"></div>
-            <form id="give" role="form" class="bg-pomegranate"> 
-                <div class="form-group"> 
-                    <label class="control-label" for="exampleInputEmail1">Email address</label>                     
-                    <input type="email" class="form-control input-sm" id="exampleInputEmail1" placeholder="Enter email"> 
-                </div>                 
-                <div class="form-group"> 
-                    <label class="control-label" for="exampleInputPassword1">Password</label>                     
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> 
-                </div>
-                <div class="form-group"> 
-                    <label class="control-label" for="formInput76">
-                        Name
+            <div class="row">
+                <div class="modal fade pg-show-modal" id="giveModal" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="true" data-backdrop="true"> 
+                    <div class="modal-dialog bggivefrom bggiveforms">
+                        <div class="modal-content bgthisgive"> 
+                            <div class="modal-header"> 
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                                 
+                                <h4 class="modal-title">Giver</h4> 
+                            </div>                             
+                            <div class="modal-body"> 
+                                <form id="give" role="form" class="bg-pomegranate" method="get" action="/signUp"> 
+                                    <div class="form-group">
+                                        <label class="control-label" for="UserName">Name</label>
+                                        <input name="UserName" type="text" class="form-control input-sm" id="UserName" placeholder="Enter name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="RUID">RUID</label>
+                                        <input name="RUID" type="number" class="form-control" id="RUID" placeholder="Enter RUID">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="MealPlan">
+                                            Meal Plan
 </label>
-                    <input type="text" class="form-control" id="formInput76" placeholder="Placeholder text">
+                                        <input name="MealPlan" type="text" class="form-control" id="MealPlan" placeholder="Which meal plan do you have?">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="SwipesLeft">Swipes Left</label>
+                                        <input name="SwipesLeft" type="number" class="form-control" id="SwipesLeft" placeholder="How many swipes do you have left?">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="Major">Major</label>
+                                        <input name="Major" type="text" class="form-control" id="Major" placeholder="What's your Major?">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="Campus">Campus</label>
+                                        <input name="Campus" type="text" class="form-control" id="Campus" placeholder="Which campus do you live on?">
+                                    </div>                                     
+                                    <input id="add-button" type="submit" class="btn btn-success btn-sm" data-dismiss="modal">
+                                </form>
+                            </div>                             
+                        </div>                         
+                    </div>                     
                 </div>
-                <div class="form-group"> 
-                    <label class="control-label" for="formInput73">Field label</label>
-                    <input type="text" class="form-control" id="formInput73" placeholder="Placeholder text">
-                </div>
-                <div class="form-group"> 
-                    <label class="control-label" for="formInput68">Field label</label>
-                    <input type="text" class="form-control" id="formInput68" placeholder="Placeholder text">
-                </div>
-                <div class="form-group"> 
-                    <label class="control-label" for="formInput65">Field label</label>
-                    <input type="text" class="form-control" id="formInput65" placeholder="Placeholder text">
-                </div>                 
-                <button type="submit" class="btn">Submit</button>                 
-            </form>
-            <div class="row pg-empty-placeholder"></div>
-            <form id="recieve" role="form" class="bg-river"> 
-                <div class="form-group bg-river"> 
-                    <label class="control-label" for="exampleInputEmail1">Email address</label>                     
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> 
-                </div>                 
-                <div class="form-group"> 
-                    <label class="control-label" for="exampleInputPassword1">Password</label>                     
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> 
-                </div>                 
-                <div class="form-group"> 
-                    <label class="control-label" for="exampleInputFile">File input</label>                     
-                    <input type="file" id="exampleInputFile"> 
-                    <p class="help-block">Example block-level help text here.</p> 
-                </div>                 
-                <div class="checkbox"> 
-                    <label class="control-label"> 
-                        <input type="checkbox"> Check me out                        
-                    </label>                     
-                </div>                 
-                <button type="submit" class="btn">Submit</button>                 
-            </form>
-        </section>
-        <section id="contact" class="content-block contact-1">
-            <div class="container text-center">
-                <div class="col-sm-10 col-sm-offset-1">
-                    <div class="underlined-title">
-                        <h1>Get in Touch</h1>
-                        <hr>
-                        <h2>Feel free to contact us!</h2>
-                    </div>
-                    <ul class="contact-info">
-                        <li>
-                            <span class="fa fa-phone"></span>
-                            <wp-span>+1 (732) 245-8122</wp-span>
-                        </li>
-                        <li>
-                            <span class="fa fa-envelope"></span>
-                            <a href="mailto:rucharity@mail.com">rucharity@mail.com</a> 
-                        </li>
-                    </ul>
-                    <!-- /.form-container -->
-                </div>
-                <!-- /.col-sm-10 -->
             </div>
             <!-- /.container -->
+            <div class="row">
+                <div class="modal fade bgreform pg-show-modal" id="recieveModal" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="true" data-backdrop="true">
+                    <div class="modal-dialog bgrform"> 
+                        <div class="modal-content bgrecform"> 
+                            <div class="modal-header"> 
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                                 
+                                <h4 class="modal-title">Receiver</h4> 
+                            </div>                             
+                            <div class="modal-body"> 
+                                <form id="recieve" role="form" class="bg-pomegranate" method="get" action="/signUp"> 
+                                    <div class="form-group">
+                                        <label class="control-label" for="rUserName">Name</label>
+                                        <input name="rUserName" type="text" class="form-control input-sm" id="rUserName" placeholder="Enter name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="r_RUID">RUID</label>
+                                        <input name="r_RUID" type="number" class="form-control" id="r_RUID" placeholder="Enter RUID">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="AnnualIncome">
+                                            Annual Income (e.x 30,000)
+</label>
+                                        <input name="AnnualIncome" type="text" class="form-control" id="AnnualIncome" placeholder="What's your family's annual income?">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="Commuter">Commuter</label>
+                                        <input name="Commuter" type="text" class="form-control" id="Commuter" placeholder="Are you a commuter?">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="r_Major">Major</label>
+                                        <input name="r_Major" type="text" class="form-control" id="r_Major" placeholder="What's your major?">
+                                    </div>
+                                    <input id="add-button" type="submit" class="btn btn-success btn-sm" data-dismiss="modal">
+                                </form>
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                </div>
+            </div>
+            <div class="row pg-empty-placeholder">
+                <section class="content-block content-2-3 bg-deepocean" id="checkBalance">
+                    <div class="container">
+                        <div class="col-sm-7 pull-left">
+                            <h2>Current balance of swipes:</h2>
+                        </div>
+                        <div class="col-sm-4 pull-right">
+                            <div class="input-group">
+                                <input type="number" class="form-control" placeholder="RUID">
+                                <span class="input-group-btn"><input id="add-button" type="submit" class="btn btn-success btn-sm"></span>
+                            </div>
+                            <!-- /.input-group -->
+                        </div>
+                    </div>
+                    <!-- /.container -->
+                </section>
+            </div>
+        </section>
+        <section id="contact" class="content-block contact-1 bgLib">
+            <div class="overlay overlay-aqua"> 
+                <div class="container text-center">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="underlined-title">
+                            <h1>Get in Touch</h1>
+                            <hr>
+                            <h2>Feel free to contact us!</h2>
+                        </div>
+                        <ul class="contact-info">
+                            <li>
+                                <span class="fa fa-phone"></span>
+                                <wp-span>+1 (732) 245-8122</wp-span>
+                            </li>
+                            <li>
+                                <span class="fa fa-envelope"></span>
+                                <a href="mailto:rucharity@mail.com">rucharity@mail.com</a> 
+                            </li>
+                        </ul>
+                        <!-- /.form-container -->
+                    </div>
+                    <!-- /.col-sm-10 -->
+                </div>
+                <!-- /.container -->
+            </div>
         </section>
         <div class="copyright-bar bg-black">
             <div class="container">
@@ -194,6 +245,6 @@
         <script type="text/javascript" src={{url_for("static",filename = "js/bootstrap.min.js")}}></script>         
         <script type="text/javascript" src={{url_for("static",filename = "js/plugins.js")}}></script>
         <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
-        <script type="text/javascript" src={{url_for("static",filename ="js/bskit-scripts.js")}}></script>         
+        <script type="text/javascript" src={{url_for("static",filename ="js/bskit-scripts.js")}}></script>      
     </body>     
 </html>

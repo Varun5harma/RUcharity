@@ -121,6 +121,7 @@ body
     background-color: #C0392B !important;
 }
 
+
 .bg-marina
 {
     background-color: #2980B9 !important;
@@ -1050,7 +1051,6 @@ img
     -moz-border-radius: 4px;
 }
 
-
 .btn-sm
 {
     padding: 7px 13px;
@@ -1956,7 +1956,6 @@ fieldset[disabled] .form-control
     z-index: 100;
     position: relative;
     background-color: #ffffff;
-    margin-bottom: 150px;
 }
 
 /*	PATTERN LIBRARY MEDIA QUERIES

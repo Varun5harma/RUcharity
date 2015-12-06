@@ -118,7 +118,7 @@ body
 
 .bg-river
 {
-    background-color: #C0392B !important;
+    background-color: #3498DB !important;
 }
 
 .bg-marina
@@ -1050,7 +1050,6 @@ img
     -moz-border-radius: 4px;
 }
 
-
 .btn-sm
 {
     padding: 7px 13px;
@@ -1946,6 +1945,7 @@ fieldset[disabled] .form-control
 {
     width: 100%;
     padding: 60px 0 60px 0;
+    z-index: 100;
     position: relative;
     background-color: #ffffff;
 }
@@ -1956,7 +1956,6 @@ fieldset[disabled] .form-control
     z-index: 100;
     position: relative;
     background-color: #ffffff;
-    margin-bottom: 150px;
 }
 
 /*	PATTERN LIBRARY MEDIA QUERIES
@@ -2022,7 +2021,7 @@ loc
 
 .bgrecform
 {
-    background-color: #C0392B !important;
+    background-color: #3498DB !important;
     color: #ffffff;
 }
 

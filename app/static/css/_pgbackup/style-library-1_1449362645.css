@@ -118,7 +118,7 @@ body
 
 .bg-river
 {
-    background-color: #C0392B !important;
+    background-color: #3498DB !important;
 }
 
 .bg-marina
@@ -876,8 +876,9 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small
 h1, h2, h3
 {
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 400;
 }
+
 
 h4, h5, h6
 {
@@ -1049,7 +1050,6 @@ img
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
 }
-
 
 .btn-sm
 {
@@ -1946,6 +1946,7 @@ fieldset[disabled] .form-control
 {
     width: 100%;
     padding: 60px 0 60px 0;
+    z-index: 100;
     position: relative;
     background-color: #ffffff;
 }
@@ -1956,7 +1957,6 @@ fieldset[disabled] .form-control
     z-index: 100;
     position: relative;
     background-color: #ffffff;
-    margin-bottom: 150px;
 }
 
 /*	PATTERN LIBRARY MEDIA QUERIES
@@ -1995,34 +1995,5 @@ loc
 .bgContact
 {
     background-image: url('../images/Rutgers_Lib.jpg');
-}
-
-.bggivefrom
-{
-}
-
-.bggiveforms
-{
-    background-color: #C0392B !important;
-}
-
-.bgthisgive
-{
-    background-color: #C0392B !important;
-    color: #fdfdfd;
-}
-
-.bgrform
-{
-}
-
-.bgreform
-{
-}
-
-.bgrecform
-{
-    background-color: #C0392B !important;
-    color: #ffffff;
 }
 

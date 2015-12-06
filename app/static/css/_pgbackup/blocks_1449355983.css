@@ -67,6 +67,7 @@ Version: 1.0
 	color: rgba(255, 255, 255, 0.8);
 }
 
+
 #header-1 .main-nav .navbar-nav > li.active a
 {
     color: #3498DB;
@@ -793,7 +794,7 @@ Version: 1.0
 
 .promo-3
 {
-    background: url("../images/Rutgers-Dining-Hall2-710x475.jpg") center top no-repeat;
+    background: url("../images/star-sky.jpg") center top no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1930,10 +1931,7 @@ Version: 1.0
 
 .overlay-aqua
 {
-    background-color: rgba(250, 250, 250, 0.9);
-    padding-top: 10px;
-    margin-top: -60px;
-    margin-bottom: -60px;
+    background-color: rgba(26, 188, 156, 0.8);
 }
 
 .overlay-orange
@@ -1943,7 +1941,7 @@ Version: 1.0
 
 .overlay-blue
 {
-    background-color: rgba(172, 1, 32, 0.6);
+    background-color: rgba(52, 152, 219, 0.8);
 }
 
 /*	CONTENT BLOCK 3-1
@@ -2079,7 +2077,7 @@ Version: 1.0
 
 .content-3-3
 {
-    background-image: url('../images/Rutgers-Livingston-Dining-Hall.jpg');
+    background-image: url("../images/seagulls.jpg");
     background-size: cover !important;
     min-height: 500px;
 }
@@ -4377,8 +4375,8 @@ Version: 1.0
 
 .copyright-bar
 {
-    height: 40px;
-    padding-top: 10px;
+    height: 70px;
+    padding-top: 20px;
     background-color: #233447;
     position: relative;
     bottom: 0;
@@ -4408,16 +4406,5 @@ Version: 1.0
     color: #ffffff;
     font-weight: 700;
     margin: 0;
-}
-
-.bgLib
-{
-    background-image: url('../images/Rutgers_Lib.jpg');
-    background-size: 100%;
-}
-
-.rowbg
-{
-    background-image: url('background: url("../images/Rutgers-Dining-Hall2-710x475.jpg") center top no-repeat;
 }
 
