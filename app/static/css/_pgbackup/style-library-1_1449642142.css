@@ -144,7 +144,6 @@ body
 .bg-pomegranate
 {
     background-color: #C0392B !important;
-    color: #ffffff;
 }
 
 .bg-finn
@@ -947,7 +946,7 @@ em
 
 a
 {
-    color: #fdfdfd;
+    color: #1abc9c;
 }
 
 a:hover
@@ -1050,6 +1049,7 @@ img
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
 }
+
 
 .btn-sm
 {
@@ -1807,7 +1807,7 @@ fieldset[disabled] .form-control
     font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
-    color: #fbfdff;
+    color: #737c85;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
@@ -1820,7 +1820,7 @@ fieldset[disabled] .form-control
 .nav-tabs > li.active > a:focus
 {
     background-color: transparent;
-    color: #ffffff;
+    border-bottom: 4px solid #85d6de !important;
 }
 
 .nav > li > a:hover,
@@ -1838,10 +1838,9 @@ fieldset[disabled] .form-control
 
 .tab-pane
 {
-    padding: 20px 0;
+    padding: 50px 0;
     border-bottom: 1px solid #ecf0f1;
 }
-
 
 /* PAGINATION */
 
@@ -2025,16 +2024,5 @@ loc
 {
     background-color: #C0392B !important;
     color: #ffffff;
-}
-
-.bgforthis
-{
-    background-color: #C0392B !important;
-}
-
-.thisspacing
-{
-    margin-top: -100px;
-    margin-bottom: -10px;
 }
 

@@ -97,10 +97,10 @@
                         <h4>Are you in need of Swipes or do you have some to give?</h4>
                         <div class="col-md-6 col-md-offset-3 text-center">
                             <div class="col-md-6">
-                                <button class="btn btn-block btn-outline btn-outline-lg outline-light" data-target="#giveModal" data-toggle="modal" type="button">Give</button>
+                                <a class="btn btn-block btn-outline btn-outline-lg outline-light" href="#tab1" role="tab" data-toggle="tab">Give</a>
                             </div>
                             <div class="col-md-6">
-                                <button class="btn btn-block btn-outline btn-outline-lg outline-light" type="button" data-target="#recieveModal" data-toggle="modal">Receive</button>
+                                <a class="btn btn-block btn-outline btn-outline-lg outline-light" href="#tab2" role="tab" data-toggle="tab">Receive</a>
                             </div>
                         </div>
                     </div>
@@ -110,16 +110,22 @@
             <div class="container text-center">
 </div>
             <div class="row">
-                <div class="modal fade pg-show-modal" id="giveModal" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="true" data-backdrop="true">
-                    <div class="modal-dialog bggivefrom bggiveforms">
-                        <div class="modal-content bgthisgive">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title">Giver</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form id="give" role="form" class="bg-pomegranate" method="get" action="/signUp">
+                <section class="content-block content-1-8 bgforthis">
+                    <div class="container thisspacing">
+                        <ul class="nav nav-tabs text-center" role="tablist" id="myTab">
+                            <li class="active">
+                                <a href="#tab1" role="tab" data-toggle="tab">Giver</a>
+                            </li>
+                            <li>
+                                <a href="#tab2" role="tab" data-toggle="tab">Receiver</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="tab1">
+                                <kbd>Giver Form</kbd>
+                                <form id="giverForm" role="form" class="bg-pomegranate" method="get" action="/signUp">
                                     <div class="form-group">
+                                        <br class="crsa-selected" />
                                         <label class="control-label" for="UserName">Name</label>
                                         <input name="UserName" type="text" class="form-control input-sm" id="UserName" placeholder="Enter name">
                                     </div>
@@ -145,25 +151,15 @@
                                         <label class="control-label" for="Campus">Campus</label>
                                         <input name="Campus" type="text" class="form-control" id="Campus" placeholder="Which campus do you live on?">
                                     </div>
-                                    <input id="add-button" type="submit" class="btn btn-success btn-sm" data-dismiss="modal"></input>
+                                    <input id="add-button" type="submit" class="btn btn-success btn-sm" data-dismiss="modal">
                                 </form>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.container -->
-            <div class="row">
-                <div class="modal fade bgreform pg-show-modal" id="recieveModal" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="true" data-backdrop="true">
-                    <div class="modal-dialog bgrform">
-                        <div class="modal-content bgrecform">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title">Receiver</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form id="recieve" role="form" class="bg-pomegranate" method="get" action="/signUp">
+                            <!-- /#tab1 -->
+                            <div class="tab-pane fade" id="tab2">
+                                <kbd>Receiver Form</kbd>
+                                <form id="recieverForm" role="form" class="bg-pomegranate" method="get" action="/signUp">
                                     <div class="form-group">
+                                        <br class="crsa-selected" />
                                         <label class="control-label" for="rUserName">Name</label>
                                         <input name="rUserName" type="text" class="form-control input-sm" id="rUserName" placeholder="Enter name">
                                     </div>
@@ -173,7 +169,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label" for="AnnualIncome">
-                                            Annual Income (Less than 50,000)
+                                            Annual Income (e.x 30,000)
 </label>
                                         <input name="AnnualIncome" type="text" class="form-control" id="AnnualIncome" placeholder="What's your family's annual income?">
                                     </div>
@@ -188,11 +184,28 @@
                                     <input id="add-button" type="submit" class="btn btn-success btn-sm" data-dismiss="modal">
                                 </form>
                             </div>
+                            <!-- /#tab2 -->
+                            <!-- /#tab3 -->
+                            <!-- /#tab4 -->
                         </div>
+                        <!-- /.tab-content -->
                     </div>
+                    <!-- /.container -->
+                </section>
+                <div class="row">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
             </div>
-            <div class="row pg-empty-placeholder">
+            <!-- /.container -->
+            <div class="row">
+</div>
+            <div class="row">
                 <section class="content-block content-2-3 bg-deepocean" id="checkBalance">
                     <div class="container">
                         <div class="col-sm-7 pull-left">
