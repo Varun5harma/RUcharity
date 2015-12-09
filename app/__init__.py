@@ -6,7 +6,6 @@ from flask import render_template, json
 #importing Flask (class that holds the entire app)
 
 
-
 app = Flask(__name__)
 from app import views
 
@@ -42,6 +41,7 @@ def signUp():
 
     #read values of Giving Form
     _name = request.args.get("UserName")
+    print 'This is the name', _name
     _RUID = request.args.get("RUID")
     _MEALPLAN = request.args.get("MealPlan")
     _SwipesLeft = request.args.get("SwipesLeft")
@@ -56,18 +56,19 @@ def signUp():
     _COMMUTER = request.args.get("Commuter")
     _MAJOR = request.args.get("r_Major")
 
-
-    query_giver = """INSERT INTO Givers (Name,RUID,MEALPLAN,SWIPES_Left,MAJORS,CAMPUS)
+    if(_name):
+        query_giver = """INSERT INTO Givers (Name,RUID,MEALPLAN,SWIPES_Left,MAJORS,CAMPUS)
                 VALUES (%s,%s,%s,%s,%s,%s); """
+        cursor.execute(query_giver, (_name, _RUID, _MEALPLAN, _SwipesLeft, _MAJOR, _CAMPUS))
+        connection.commit()
 
-    cursor.execute(query_giver, (_name, _RUID, _MEALPLAN, _SwipesLeft, _MAJOR, _CAMPUS))
-    connection.commit()
-
-    query_reciever = """INSERT INTO Recievers (Name,RUID,Annual_Income,Swipes_Recieved,Commuter,Major)
+    if(_Rname):
+        query_reciever = """INSERT INTO Recievers (Name,RUID,Annual_Income,Swipes_Recieved,Commuter,Major)
                 VALUES (%s,%s,%s,%s,%s,%s); """
+        cursor.execute(query_reciever, (_Rname, _rRUID, _ANNUALINCOME, _SWIPESRECIEVED, _COMMUTER, _MAJOR))
+        connection.commit()
 
-    cursor.execute(query_reciever, (_Rname, _rRUID, _ANNUALINCOME, _SWIPESRECIEVED, _COMMUTER, _MAJOR))
-    connection.commit()
+
     return render_template("index.html")
 
 

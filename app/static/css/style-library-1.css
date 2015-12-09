@@ -1048,6 +1048,7 @@ img
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
+    visibility: hidden;
 }
 
 
@@ -1965,25 +1966,25 @@ fieldset[disabled] .form-control
 /* Small Devices, Tablets */
 
 @media only screen and (min-width : 768px){
-	
-	
-	
+
+
+
 }
 
 /* Medium Devices, Desktops */
 
 @media only screen and (min-width : 992px){
-	
-	
-	
+
+
+
 }
 
 /* Large Devices, Wide Screens */
 
 @media only screen and (min-width : 1200px){
-	
-	
-	
+
+
+
 }
 
 loc
@@ -2025,4 +2026,3 @@ loc
     background-color: #C0392B !important;
     color: #ffffff;
 }
-
