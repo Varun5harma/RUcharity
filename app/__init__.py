@@ -38,6 +38,26 @@ def signUp():
     global cursor;
     cursor = connection.cursor()
 
+    cursor = connection.cursor()
+
+    ruid = request.args.get['recieverRUID']
+
+    operation = "select Swipes_Recieved from Recievers where ruid = {0}".format(recieverRUID)
+#    for result in cursor.execute(operation, multi=True):
+#        if result.with_rows:
+#            print("Rows produced by statement!!!")
+#            print "this is the result:", (result.fetchall())
+#        else:
+#                print("Number of rows affected by statement '{}': {}".format(
+#                        result.statement, result.rowcount))
+
+    this_sum = 0
+    for result in cursor.execute(operation):
+        if result.with_rows:
+            this_sum = result.fetchall()
+            print this_sum
+    connection.commit()
+
 
     #read values of Giving Form
     _name = request.args.get("UserName")
