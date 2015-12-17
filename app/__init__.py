@@ -2,6 +2,7 @@ from flask import Flask
 import mysql.connector
 from flask import request
 from flask import render_template, json
+from decimal import *
 
 #importing Flask (class that holds the entire app)
 
@@ -29,6 +30,11 @@ for result in cursor.execute(operation, multi=True):
 
 cursor.execute(operation)
 
+def decimal_default(obj):
+    if isinstance(obj, decimal.Decimal):
+        return float(obj)
+    raise TypeError
+
 @app.route('/signUp', methods=["GET"])
 def signUp():
     global connection
@@ -37,12 +43,10 @@ def signUp():
                                   database='MainCharityDB')
     global cursor;
     cursor = connection.cursor()
+    ruid = request.args.get("recieverRUID")
 
-    cursor = connection.cursor()
-
-    ruid = request.args.get['recieverRUID']
-
-    operation = "select Swipes_Recieved from Recievers where ruid = {0}".format(recieverRUID)
+    if(ruid):
+        operation = "select Swipes_Recieved from Recievers where ruid = {0}".format(ruid)
 #    for result in cursor.execute(operation, multi=True):
 #        if result.with_rows:
 #            print("Rows produced by statement!!!")
@@ -51,13 +55,29 @@ def signUp():
 #                print("Number of rows affected by statement '{}': {}".format(
 #                        result.statement, result.rowcount))
 
-    this_sum = 0
-    for result in cursor.execute(operation):
-        if result.with_rows:
-            this_sum = result.fetchall()
-            print this_sum
-    connection.commit()
 
+        cursor.execute(operation)
+        result = cursor.fetchall()
+        connection.commit()
+        return json.dumps(result)
+
+    campus = request.args.get("CommuterCheck")
+    if(campus):
+            operation = "select count(*) from Recievers where Commuter =  '{0}'".format(campus)
+            cursor.execute(operation)
+            result = cursor.fetchall()
+            connection.commit()
+            return json.dumps(result)
+
+
+    major_swipe = request.args.get("MajorSwipe")
+    if(major_swipe):
+            operation = "select avg(swipes_left) from Givers where Majors =  '{0}'".format(major_swipe)
+            cursor.execute(operation)
+            result = cursor.fetchall()
+            connection.commit()
+
+            return json.dumps(str(result))
 
     #read values of Giving Form
     _name = request.args.get("UserName")

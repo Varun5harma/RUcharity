@@ -84,7 +84,12 @@ body
 .bg-deepocean
 {
     background-color: #193441 !important;
+    '
+    width: 100%;
+    padding: 30px 0 30px 0;
+    position: relative;
 }
+
 
 .bg-turquoise
 {
@@ -1842,7 +1847,6 @@ fieldset[disabled] .form-control
     border-bottom: 1px solid #ecf0f1;
 }
 
-
 /* PAGINATION */
 
 .pagination li a
@@ -1966,25 +1970,25 @@ fieldset[disabled] .form-control
 /* Small Devices, Tablets */
 
 @media only screen and (min-width : 768px){
-	
-	
-	
+
+
+
 }
 
 /* Medium Devices, Desktops */
 
 @media only screen and (min-width : 992px){
-	
-	
-	
+
+
+
 }
 
 /* Large Devices, Wide Screens */
 
 @media only screen and (min-width : 1200px){
-	
-	
-	
+
+
+
 }
 
 loc
@@ -2037,4 +2041,3 @@ loc
     margin-top: -100px;
     margin-bottom: -10px;
 }
-
